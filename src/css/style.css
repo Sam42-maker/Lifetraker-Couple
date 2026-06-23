@@ -1,0 +1,51 @@
+/* Pengaturan Dasar Font & Latar Belakang */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FDFBF7; /* Latar Off-White */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2D2825; /* Teks abu-abu gelap agar tidak sakit di mata */
+}
+
+/* Class wajib untuk menyembunyikan elemen */
+.hidden {
+    display: none !important;
+}
+
+/* Desain Dashboard Sederhana (Untuk Testing) */
+#main-dashboard {
+    padding: 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+.dashboard-header {
+    background-color: #A8E6CF; /* Mint Green Pastel */
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.dashboard-header h2 {
+    margin: 0 0 5px 0;
+    color: #1B4332;
+}
+
+.card-pastel {
+    background-color: #FFD3B6; /* Soft Peach */
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.money-text {
+    font-size: 32px;
+    margin: 10px 0 0 0;
+    color: #D9534F; /* Merah kalem */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

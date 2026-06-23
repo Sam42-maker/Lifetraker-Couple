@@ -1,0 +1,93 @@
+/* Panggung Utama (Layar Penuh Cream Pastel) */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FDFBF7; /* Cream hangat */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out; /* Transisi memudar saat selesai */
+}
+
+/* Pengaturan Dasar Aktor Kucing */
+#splash-screen img {
+    position: absolute;
+    width: 120px; /* Ukuran kucing */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 1. Kucing Hitam (Shandy) Meluncur dari Kiri */
+#cat_shandy {
+    left: -150px;
+    /* Meluncur 1.2 detik, mengerem perlahan di akhir */
+    animation: walkInLeft 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* 2. Kucing Putih (Rafdah) Meluncur dari Kanan */
+#cat_rafdah {
+    right: -150px;
+    animation: walkInRight 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* 3. Kucing Yin-Yang (Awalnya Hilang, Muncul di tengah) */
+#cat_yinyang {
+    left: 50%;
+    margin-left: -60px; /* Agar tepat di tengah */
+    opacity: 0;
+    /* Muncul mendadak di detik 1.2, lalu mulai mendengkur */
+    animation: 
+        snapYinYang 0.1s 1.2s forwards,
+        purringHeartbeat 1s 1.3s infinite alternate ease-in-out;
+}
+
+/* 4. Partikel Cinta */
+#love-particles {
+    position: absolute;
+    top: 40%;
+    text-align: center;
+}
+.heart {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0;
+}
+.h1 { animation: floatUp 1.5s 1.5s forwards; left: -10px; }
+.h2 { animation: floatUp 1.5s 1.8s forwards; left: 15px; font-size: 18px; }
+.h3 { animation: floatUp 1.5s 2.0s forwards; left: -5px; font-size: 20px; }
+
+/* ========================================== */
+/* THE MAGIC KEYFRAMES (RUMUS GERAKAN)        */
+/* ========================================== */
+
+@keyframes walkInLeft {
+    0% { left: -150px; opacity: 1; }
+    99% { left: 50%; margin-left: -60px; opacity: 1; }
+    100% { left: 50%; margin-left: -60px; opacity: 0; } /* Menghilang saat tabrakan */
+}
+
+@keyframes walkInRight {
+    0% { right: -150px; opacity: 1; }
+    99% { right: 50%; margin-right: -60px; opacity: 1; }
+    100% { right: 50%; margin-right: -60px; opacity: 0; } /* Menghilang saat tabrakan */
+}
+
+@keyframes snapYinYang {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes purringHeartbeat {
+    0% { transform: translateY(-50%) scale(1); }
+    100% { transform: translateY(-50%) scale(1.04); } /* Mengembang 4% meniru nafas */
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(0.5); opacity: 0; }
+    20% { opacity: 1; transform: translateY(-10px) scale(1); }
+    100% { transform: translateY(-40px) scale(1.2); opacity: 0; }
+}
