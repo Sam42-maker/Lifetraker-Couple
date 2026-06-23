@@ -1,5 +1,5 @@
 // ⚠️ GANTI STRING DI BAWAH DENGAN URL WEB APP GOOGLE SCRIPT KAMU (Versi 7 yang terbaru)
-const GOOGLE_API_URL = "https://script.google.com/macros/s/AKfycby2NZ2UzH1ocdEXDjlcgiodjQhpmNRZ4Sxpgg7oBaUrw7lugKvf4vNzqHyv_D9Sj0KKVw/exec";
+const GOOGLE_API_URL = "https://script.google.com/macros/s/AKfycby2NZ2UzH1ocdEXDjlcgiodjQHpmNRZ4Sxpgg7oBaUrw7lugKvf4vNzqHyv_D9Sj0KKVw/exec";
 
 async function fetchLiveExpenses() {
     try {
